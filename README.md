@@ -162,6 +162,31 @@ This function filters down the iterable ($items) passed by only including what i
 in the Closure ($callback). By default, the key is not preserved, but you can set it to 
 true, if you wish to preserve the key.
 
+_Example_
+```php
+use function Midnite81\Loopy\filter;
+
+$users = [
+            ["name" => 'dave'],
+            ["name" => 'susan'],
+            ["name" => 'ingrid'],
+            ["name" => 'patricia'],
+            ["name" => 'sally'],
+        ];
+
+$usersWhoseNamesDontStartWithS = filter($users, fn($user) => !str_starts_with($user['name'], "s"));
+
+```
+
+_Result_
+```php
+$usersWhoseNamesDontStartWithS = [
+    'dave',
+    'ingrid',
+    'patricia'
+]
+```
+
 ### times
 `times(iterable $items, Closure $callback, int $times): bool`
 
