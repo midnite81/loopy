@@ -1,0 +1,32 @@
+{
+    "name": "midnite81/loopy",
+    "description": "Adds functionality for iterables",
+    "type": "library",
+    "require": {
+        "php": ">7.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "pestphp/pest": "^1.15",
+        "php-coveralls/php-coveralls": "^2.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Midnite81\\Loopy\\": "src/"
+        },
+        "files": ["src/iterations.php"]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Midnite81\\Loopy\\Tests\\": "tests"
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Simon Rogers",
+            "email": "webdev@centralblue.co.uk"
+        }
+    ],
+    "minimum-stability": "stable"
+}
