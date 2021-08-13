@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 use PHPUnit\Framework\TestCase;
 use function Midnite81\Loopy\all;
+use function Midnite81\Loopy\each;
 use function Midnite81\Loopy\filter;
 use function Midnite81\Loopy\map;
 use function Midnite81\Loopy\once;
 use function Midnite81\Loopy\reduce;
 use function Midnite81\Loopy\some;
-use function Midnite81\Loopy\each;
 use function Midnite81\Loopy\times;
 
 class IterationsTest extends TestCase
@@ -86,7 +86,7 @@ class IterationsTest extends TestCase
 
         $newColours = [];
 
-        each($colours, function($colour) use (&$newColours) {
+        each($colours, function ($colour) use (&$newColours) {
             $newColours[] = $colour . "_new";
         });
 
@@ -94,7 +94,7 @@ class IterationsTest extends TestCase
             ->toBeArray()
             ->toHaveCount(4)
             ->sequence(
-                fn ($item) => $item->toEqual('blue_new'),
+                fn($item) => $item->toEqual('blue_new'),
                 fn($item) => $item->toEqual('red_new'),
                 fn($item) => $item->toEqual('green_new'),
                 fn($item) => $item->toEqual('yellow_new'),
@@ -115,7 +115,7 @@ class IterationsTest extends TestCase
             ->toBeArray()
             ->toHaveCount(2)
             ->sequence(
-                fn ($item) => $item->toEqual('dave'),
+                fn($item) => $item->toEqual('dave'),
                 fn($item) => $item->toEqual('susan')
             );
     }
@@ -134,7 +134,7 @@ class IterationsTest extends TestCase
             ->toBeArray()
             ->toHaveCount(2)
             ->sequence(
-                fn ($item) => $item->toEqual('dave'),
+                fn($item) => $item->toEqual('dave'),
                 fn($item) => $item->toEqual('susan')
             );
     }
@@ -162,11 +162,11 @@ class IterationsTest extends TestCase
             (object)["name" => 'susan', "age" => 23, "dept" => 2],
         ];
 
-       $sut = reduce($users, fn($current, $item, $key) => $current . substr($item->name, 0, 1));
+        $sut = reduce($users, fn($current, $item, $key) => $current . substr($item->name, 0, 1));
 
-       expect($sut)
-           ->toBeString()
-           ->toBe("ds");
+        expect($sut)
+            ->toBeString()
+            ->toBe("ds");
     }
 
     /** @test */
@@ -224,9 +224,9 @@ class IterationsTest extends TestCase
 
         expect($sut)
             ->toHaveKeys([
-               'id_dave',
-               'id_ingrid',
-               'id_patricia'
+                'id_dave',
+                'id_ingrid',
+                'id_patricia'
             ]);
     }
 
