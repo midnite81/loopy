@@ -1,7 +1,6 @@
 # Loopy!
 [![Latest Stable Version](https://poser.pugx.org/midnite81/loopy/version)](https://packagist.org/packages/midnite81/loopy) [![Total Downloads](https://poser.pugx.org/midnite81/loopy/downloads)](https://packagist.org/packages/midnite81/loopy) [![Latest Unstable Version](https://poser.pugx.org/midnite81/loopy/v/unstable)](https://packagist.org/packages/midnite81/loopy) [![License](https://poser.pugx.org/midnite81/loopy/license.svg)](https://packagist.org/packages/midnite81/loopy) [![Build](https://travis-ci.org/midnite81/loopy.svg?branch=master)](https://travis-ci.org/midnite81/loopy) [![Coverage Status](https://coveralls.io/repos/github/midnite81/loopy/badge.svg?branch=master)](https://coveralls.io/github/midnite81/loopy?branch=master)
 
-
 This is a PHP package which adds some namespaced array functions. Some of these functions
 can be natively accessed using array_* however there are few which aren't natively 
 available. 
