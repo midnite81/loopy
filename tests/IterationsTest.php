@@ -102,6 +102,34 @@ class IterationsTest extends TestCase
     }
 
     /** @test */
+    public function it_breaks_iteration_when_false_returned_in_closure()
+    {
+        $colours = [
+            'blue',
+            'red',
+            'green',
+            'yellow'
+        ];
+
+        $newColours = [];
+
+        each($colours, function ($colour) use (&$newColours) {
+            $newColours[] = $colour . "_new";
+            if ($colour === "red") {
+                return false;
+            }
+        });
+
+        expect($newColours)
+            ->toBeArray()
+            ->toHaveCount(2)
+            ->sequence(
+                fn($item) => $item->toEqual('blue_new'),
+                fn($item) => $item->toEqual('red_new')
+            );
+    }
+
+    /** @test */
     public function it_maps_to_new_array()
     {
         $users = [

@@ -21,6 +21,9 @@
             "Midnite81\\Loopy\\Tests\\": "tests"
         }
     },
+    "scripts": {
+        "test": "XDEBUG_MODE=coverage ./vendor/bin/phpunit --coverage-html build/html"
+    },
     "license": "MIT",
     "authors": [
         {
