@@ -9,7 +9,7 @@ before_script:
 
 script:
   - mkdir -p build/logs
-  - XDEBUG_MODE=coverage vendor/bin/phpunit tests --coverage-clover build/logs/clover.xml
+  - XDEBUG_MODE=coverage vendor/bin/pest tests --coverage-clover build/logs/clover.xml
 
 after_success:
   - php vendor/bin/php-coveralls -v
